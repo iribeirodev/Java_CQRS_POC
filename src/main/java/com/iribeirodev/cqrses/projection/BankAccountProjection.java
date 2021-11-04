@@ -58,7 +58,7 @@ public class BankAccountProjection {
 		Optional<BankAccount> optBankAccount = repository.findById(event.getId());
 		if (optBankAccount.isPresent()) {
 			BankAccount bankAccount = optBankAccount.get();
-			BigDecimal value = bankAccount.getBalance().add(event.getDebitAmount());
+			BigDecimal value = bankAccount.getBalance().subtract(event.getDebitAmount());
 			bankAccount.setBalance(value);
 			repository.save(bankAccount);
 		} else {
