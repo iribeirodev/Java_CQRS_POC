@@ -20,7 +20,7 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors
-                        .basePackage("com.iribeirodev.dev.cqrses"))
+                        .basePackage("com.iribeirodev.cqrses"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(getApiInfo());
